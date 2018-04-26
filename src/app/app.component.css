@@ -1,0 +1,8 @@
+.sidebar {
+  /*float: left;*/
+  margin-right: 50px;
+}
+
+.active {
+  color: blue;
+}
