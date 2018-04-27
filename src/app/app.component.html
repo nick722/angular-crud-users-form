@@ -1,22 +1,27 @@
 <main>
 
-  <app-user-profile [user]="activeUser"></app-user-profile>
+  <!--<app-user-profile [user]="activeUser"></app-user-profile>-->
 
-  <div *ngIf="!activeUser">
-    <h2>Choose a User</h2>
-  </div>
+  <!--<div *ngIf="!activeUser">-->
+    <!--<h2>Choose a User</h2>-->
+  <!--</div>-->
 
-  <div *ngIf="users" class="sidebar">
+  <!--<app-users></app-users>-->
+  <!--<div *ngIf="users" class="sidebar">-->
+  <div *ngIf="users">
     <ul>
-      <li *ngFor="let user of users"
-          (click)="selectUser(user)"
-          [class.active]="user === activeUser">
-        {{ user.name }} {{ user.lastname }}
+      <li *ngFor="let user of users">
+        <h2>{{ user.first_name }}</h2>
+          <!--(click)="selectUser(user)"-->
+          <!--[class.active]="user === activeUser">-->
+        <!--{{ user.name }} {{ user.lastname }}-->
       </li>
     </ul>
   </div>
 
-  <app-user-form (userCreated)="onUserCreated($event)"></app-user-form>
+  <router-outlet></router-outlet>
+
+  <!--<app-user-form (userCreated)="onUserCreated($event)"></app-user-form>-->
 
 </main>
 
